@@ -1,0 +1,5 @@
+@media (max-width: 986px) {
+    #login_screen_left {
+        min-width: 500px;
+    }
+}

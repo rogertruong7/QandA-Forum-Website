@@ -1,0 +1,150 @@
+#thread_screen.active {
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    height: 100%;
+    max-height: 100%;
+    background-color: rgb(245, 239, 255);
+    padding-top: 0px;
+}
+
+#thread_container h2 {
+    margin: 10px 0px 0px 0px;
+}
+
+#thread_container {
+    background-color: rgb(255, 255, 255);
+    padding: 50px;
+    padding-top: 120px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    height: 100%;
+    width: 70%;
+    margin-left: 250px;
+    padding-left: 10%;
+    padding-right: 10%;
+    box-sizing: border-box;
+    border-left: 1px solid rgb(215, 215, 215);
+    border-right: 1px solid rgb(215, 215, 215);
+}
+
+#like_date_container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#thread_title {
+    overflow-wrap: break-word;
+}
+
+.reply_content_container {
+    display: none;
+}
+
+.reply_content_container.active {
+    display: block;
+}
+
+#public_lock_container {
+    display: flex;
+    justify-content: space-between;
+}
+
+hr {
+    border-color: rgb(230, 230, 230);
+    width: 100%;
+}
+
+#thread_content {
+    font-size: 14px;
+    overflow-wrap: break-word;
+    max-height: 400px;
+    overflow: hidden;
+    padding-bottom: 50px;
+    border-bottom: 4px solid rgb(77, 109, 120);
+}
+
+#like_name_container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#like_button {
+    width: 40px;
+    cursor: pointer;
+}
+
+#thread_likes {
+    margin-right: 15px;
+    margin-top: -10px;
+}
+
+#bin_edit_watch_container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#edit_bin_group {
+    gap: 10px;
+    display: flex;
+}
+
+#bin_edit_watch_container img {
+    width: 20px;
+}
+
+#edit_container {
+    visibility: hidden;
+}
+
+#bin_container {
+    visibility: hidden;
+}
+
+.button_container {
+    font-size: 14px;
+    display: flex;
+    padding: 5px 10px 5px 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 2px rgba(29, 29, 29, 0.2);
+    cursor: pointer;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.button_container p {
+    margin: 0;
+}
+
+.button_container:hover {
+    background-color: rgb(241, 241, 241);
+}
+
+#view_more_threads_container {
+    margin-top: -15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#view_more_threads {
+    position: absolute;
+    font-family: "Lexend", sans-serif;
+    border: 2px solid #5886a7;
+    background-color: #5886a7;
+    color: white;
+    height: 35px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#view_more_threads:hover {
+    border: 2px solid #385569;
+    background-color: #385569;
+}
+

@@ -1,0 +1,89 @@
+#register_screen.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(../assets/loginBackground.jpeg);
+    background-size: cover; 
+    background-position: center;
+}
+
+#back_to_login_button {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#register_container {
+    background-color: white;
+    padding: 40px 60px 50px 60px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px 2px rgba(29, 29, 29, 0.2);
+}
+
+#back_to_login_button {
+    margin-top: 20px;
+    margin-left: 20px;
+    text-align: center;
+    font-family: "Lexend", sans-serif;
+    border: 2px solid #5886a7;
+    background-color: #5886a7;
+    color: white;
+    border-radius: 8px;
+    height: 35px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#back_to_login_button:hover {
+    border: 2px solid #385569;
+    background-color: #385569;
+}
+
+#register_form {
+    display: flex;
+    flex-direction: column;
+}
+
+.register_inputs {
+    width: 95%;
+    border-radius: 8px;
+    border: 2px solid #8199aa;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    font-family: "Lexend", sans-serif;
+}
+
+#sign_up_button {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    font-family: "Lexend", sans-serif;
+    border: 2px solid #5886a7;
+    background-color: #5886a7;
+    color: white;
+    border-radius: 8px;
+    height: 35px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.register_labels {
+    margin-top: 10px;
+    margin-bottom: 2px;
+}
+
+#sign_up_button_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#sign_up_button:hover {
+    border: 2px solid #385569;
+    background-color: #385569;
+}

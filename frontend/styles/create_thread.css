@@ -1,0 +1,75 @@
+#create_thread_screen.active {
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    max-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10px;
+    background-color: rgb(255, 254, 254);
+}
+
+#create_thread_screen h1 {
+    font-size: 24px;
+    margin: 0;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: rgb(53, 0, 53);
+}
+
+#create_thread_form {
+    background-color: white;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0px 0px 5px 2px rgba(36, 4, 43, 0.2);
+    padding-left: 10%;
+    padding-right: 20%;
+    box-sizing: border-box;
+}
+
+#create_thread_form label {
+    font-size: 18px;
+    padding-bottom: 5px;
+    color: rgb(53, 0, 53);
+}
+
+#create_thread_form input,
+#create_thread_form textarea {
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: none;
+    border-bottom: 2px solid #8199aa;
+    border-right: 2px solid #8199aa;
+    background-color: rgb(224, 244, 252);
+    background-size: cover;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+#create_thread_form input:focus,
+#create_thread_form textarea:focus {
+    outline: none;
+    border: 2px solid #8199aa;
+}
+
+#create_thread_submit {
+    text-align: center;
+    font-family: "Lexend", sans-serif;
+    border: 2px solid #5886a7;
+    background-color: #5886a7;
+    color: white;
+    border-radius: 8px;
+    height: 35px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#create_thread_submit:hover {
+    border: 2px solid #385569;
+    background-color: #385569;
+}

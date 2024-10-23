@@ -1,0 +1,86 @@
+/* base styles, feel free to edit */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial;
+    font-family: "Lexend", sans-serif;
+}
+
+footer {
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+    text-align: center;
+    background-color: #fdfdfd;
+    display: none;
+}
+
+.nav {
+    display: flex;
+}
+
+.screen.active {
+    display: block;
+}
+
+.appScreen {
+    display: none;
+}
+
+.screen {
+    display: none;
+}
+
+/* Error */
+#error_popup h1 {
+    margin-bottom: 0;
+}
+
+#error_popup {
+    visibility: visible;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    padding-bottom: 2vh;
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    transform: translateX(-50%);
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 2vw;
+    box-shadow: 0px 0px 5px 5px rgba(29, 29, 29, 0.2);
+    transition: opacity 0.3s;
+}
+
+#error_popup img {
+    width: 60px;
+}
+
+#accept_error_button {
+    margin-top: 2vh;
+    text-align: center;
+    font-family: "Lexend", sans-serif;
+    border: 2px solid #5886a7;
+    background-color: #5886a7;
+    color: white;
+    border-radius: 8px;
+    height: 35px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#accept_error_button:hover {
+    border: 2px solid #385569;
+    background-color: #385569;
+}
+
+#error_popup.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+

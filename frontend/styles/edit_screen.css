@@ -1,0 +1,96 @@
+#edit_section {
+    display: none;
+}
+
+#edit_section.active {
+    display: flex;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    flex-direction: column;
+    font-family: 'Open Sans', sans-serif;
+    border: none;
+}
+
+#edit_section h2 {
+    margin: 0;
+    font-size: 24px;
+}
+#edit_form_container {
+    height: 100%;
+    width: 800px;
+    padding-top: 80px;
+    margin-left: 300px;
+}
+
+#edit_form {
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+}
+
+#edit_form textarea {
+    font-size: 14px;
+    padding: 10px;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 10px;
+    border: 2px solid #527c99;
+}
+
+#edit_form textarea:focus {
+    outline: none;
+    border: 2px solid #acddff;
+}
+
+#edit_form label {
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+#thread_title_edit {
+    height: 100px;
+}
+
+#thread_content_edit {
+    height: 300px;
+}
+
+#edit_buttons_container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.edit_screen_button {
+    text-align: center;
+    font-family: "Lexend", sans-serif;
+    border: 2px solid #5886a7;
+    background-color: #5886a7;
+    color: white;
+    border-radius: 8px;
+    height: 35px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    width: 80px;
+    
+}
+
+.edit_screen_button:hover {
+    border: 2px solid #385569;
+    background-color: #385569;
+}
+
+#cancel_edit_button {
+    background-color: #ff2a2a;
+    border: 2px solid #ff2a2a;
+}
+
+
+#cancel_edit_button:hover {
+    border: 2px solid #ab0000;
+    background-color: #ab0000;
+}

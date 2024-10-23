@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>QandA</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- You can add your styles and scripts here -->
+    <link rel="icon" href="./assets/qanda_logo.svg" type="image/svg">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Domine:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/global.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/mobile.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/login.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/register.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/dashboard.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/create_thread.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/thread_screen.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/edit_screen.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/comments.css" />
+</head>
+<body>
+    <main role="main">
+        <!-- app goes here --> 
+        <section id="error_popup" class="hidden">
+            <h1 id="error_title">ERROR</h1>
+            <p id="error_description">Description</p>
+            <img src="./assets/Red_X.svg" alt="red_x">
+            <button type="button" id="accept_error_button">OK</button>
+        </section>
+        <section id="login_screen" class="screen active">
+            <div id="login_screen_left">
+                <div id="login_screen_text">
+                    <h1>Got questions?</h1>
+                    <p id="sign_in_description">Sign in to start sharing your questions and answers</p>
+                    <form id="sign_in_form">
+                        <label class="sign_in_labels" for="sign_in_email">Email Address</label>
+                        <input type="email" id="sign_in_email" class="sign_in_inputs" required>
+                        <label class="sign_in_labels" for="sign_in_password">Password</label>
+                        <input type="password" id="sign_in_password" class="sign_in_inputs" required>
+                        <div id="sign_in_button_container">
+                            <button type="button" id="sign_in_button">Sign In</button>
+                        </div>
+                    </form>
+                    <div id="sign__up__container">
+                        <p>Don't have an account?</p>
+                        <p id="sign_up" onclick="">Sign Up</p>
+                    </div>
+                </div>
+            </div>
+            <div id="login_background_container">
+                <p id="brand_name_login">&copy; QandA 2025</p>
+                <img src="./assets/loginBackground.jpeg" alt="loginBackgroundImage">
+            </div>
+        </section>
+        <section id="register_screen" class="screen">
+            <button type="button" id="back_to_login_button">Back to Login</button>
+            <div id="register_container">
+                <h2>Register</h2>
+                <form id="register_form">
+                    <label class="register_labels" for="register_email">Email Address</label>
+                    <input type="email" id="register_email" class="register_inputs" autocomplete="off" required>
+                    <label class="register_labels" for="register_name">Name</label>
+                    <input type="text" id="register_name" class="register_inputs" autocomplete="off" required>
+                    <label class="register_labels" for="register_password">Password</label>
+                    <input type="password" id="register_password" class="register_inputs" autocomplete="off" required>
+                    <label class="register_labels" for="confirm_password">Confirm Password</label>
+                    <input type="password" id="confirm_password" class="register_inputs" autocomplete="off" required>
+                    <div id="sign_up_button_container">
+                        <button type="button" id="sign_up_button">Sign Up</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section id="app_screen" class="screen">
+            <aside class="sidebar" id="main_sidebar">
+                <h3>Your Threads</h3>
+                <ul id="threads_sidebar">
+                </ul>
+                <div id="view_more_container">
+                    <button type="button" id="view_more_button">View more</button>
+                </div>
+            </aside>
+            <aside id="create_icon">
+                <p>Create</p>
+                <img id="create_img" src="./assets/edit.svg" alt="create_img">
+            </aside>
+            <nav id="top_nav">
+                <img src="./assets/qanda_logo.svg" alt="QandA Logo" class="logo">
+                <div id="header_container">
+                    <h1 id="dashboard_text">QandA Dashboard</h1>
+                    <button type="button" id="logout_button">Logout</button>
+                </div>
+            </nav>
+            <section id="dashboard_screen" class="appScreen active">
+                <p>Welcome to the Dashboard!</p>
+                <p>Select or create a thread to start.</p>
+            </section>
+            <section id="create_thread_screen" class="appScreen">
+                <form id="create_thread_form">
+                    <h1>Create thread</h1>
+                    <input type="text" id="create_thread_title" name="title" placeholder="Title*" required>
+                    <textarea id="create_thread_content" name="content" rows="20" placeholder="Body" required></textarea>
+                    <label>
+                        <input id="private_checkbox" type="checkbox" name="private" value="true">
+                        Make this thread private
+                    </label>
+                    <button id="create_thread_submit" type="button">Submit</button>
+                </form>
+            </section>
+            <section id="thread_screen" class="appScreen">
+                <div id="thread_container">
+                    <div id="bin_edit_watch_container">
+                        <div id="watch_button" class="button_container">
+                            <p id="watch_text">Watch</p>
+                            <img id="eye_image" src="./assets/eye.svg" alt="eye">
+                        </div>
+                        <div id="edit_bin_group">
+                            <div id="edit_container" class="button_container">
+                                <p>Edit</p>
+                                <img id="edit_button" src="./assets/edit_thread.svg" alt="edit_button">
+                            </div>
+                            <div id="bin_container" class="button_container">
+                                <p>Delete</p>
+                                <img id="bin_button" src="./assets/bin.svg" alt="bin">
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <h2 id="thread_title">You are on a thread screen!</h2>
+                    <div id="like_name_container">
+                        <p>Posted by Steve</p>
+                        <img id="like_button" src="./assets/white_heart.svg" alt="like_heart">
+                    </div>
+                    <div id="like_date_container">
+                        <i id="thread_date"></i>
+                        <p id="thread_likes"></p>
+                    </div>
+                    <div id="public_lock_container">     
+                        <b id="public_text">Public</b>
+                        <b id="lock_text"></b>
+                    </div>
+                    <hr>
+                    <p id="thread_content"></p>
+                    <div id="view_more_threads_container">
+                        <button type="button" id="view_more_threads">View more</button>
+                    </div>
+                    <section id="comments_section">
+                        <div id="comments_title">
+                            <h3>Comments</h3>
+                            <hr>
+                        </div>
+                        <div id="comments_list">
+                            <div class="comment">
+                                <div class="comment_info">
+                                    <div>
+                                        <img class="comments_pfp" src="./assets/qanda_logo.svg" alt="profilepic">
+                                    </div>
+                                    <div id="middle_comments_container">
+                                        <p class="comments_name">Name</p>
+                                        <p class="comment_text">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                        </p>
+                                        <div class="date_reply_container">
+                                            <p class="comment_date">Date</p>
+                                            <p class="reply_text">Reply</p>
+                                        </div>
+                                    </div>
+                                    <div class="comments_like_container">
+                                        <img class="comments_like_button" src="./assets/white_heart.svg" alt="comments_like_heart">
+                                        <p class="comments_like_number">0</p>
+                                    </div>
+                                </div>
+                                <div class="reply_content_container">
+                                    <textarea name="" class="reply_content">
+
+                                    </textarea>
+                                </div>
+                            </div>
+                            
+                            <!--  -->
+                        </div>
+                    </section>
+                </div>
+            </section>
+            <section id="edit_section" class="appScreen">
+                <div id="edit_form_container">
+                    <form id="edit_form">
+                        <h2>Edit thread</h2>
+                        <label for="thread_title_edit">Title</label>
+                        <textarea id="thread_title_edit"></textarea>
+                        <label for="thread_content_edit">Content</label>
+                        <textarea id="thread_content_edit"></textarea>
+                        <label>
+                            <input id="edit_private_checkbox" type="checkbox" name="private" value="true">
+                            Make this thread private
+                        </label>
+                        <label>
+                            <input id="edit_lock_checkbox" type="checkbox" name="private" value="true">
+                            Lock this thread
+                        </label>
+                    </form>
+                    <div id="edit_buttons_container">
+                        <button class="edit_screen_button" id="cancel_edit_button">Cancel</button>
+                        <button class="edit_screen_button" id="submit_edit_button">Save</button>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+    <footer class="active">
+        <p>&copy; QandA 2025</p>
+    </footer>
+    <script type="module" src="src/main.js"></script>
+</body>
+</html>
