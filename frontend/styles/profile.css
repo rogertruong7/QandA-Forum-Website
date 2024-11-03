@@ -1,0 +1,223 @@
+#profile_section {
+    display: none;
+}
+
+#profile_section.active {
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    font-family: 'Open Sans', sans-serif;
+    border: none;
+    margin-left: 500px; /* 250px form appscreen + 100px */
+    margin-right: 250px;
+}
+
+#profile_page {
+    padding-top: 80px;
+    display: flex;
+}
+
+#your_profile {
+    width: 800px;
+}
+#your_profile p {
+    overflow-wrap: break-word;
+}
+
+#right_container_profile {
+    display: block;
+    width: 300px;
+    background-color: rgb(247, 247, 247);
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 30px;
+    margin-bottom: 100px;
+    height: 800px;
+}
+#right_container_profile p { 
+    overflow-wrap: break-word;
+}
+
+#profile_section h2 {
+    margin: 0;
+    margin-top: 30px;
+    font-size: 24px;
+}
+
+#your_profile h1 {
+    font-size: 36px;
+    margin-bottom: 0;
+}
+
+.thread_list {
+    padding-bottom: 100px;
+}
+
+#update_profile_form {
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+#update_profile_form textarea {
+    font-size: 14px;
+    padding: 10px;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 10px;
+    border: 2px solid #527c99;
+}
+
+#update_profile_form textarea:focus {
+    outline: none;
+    border: 2px solid #acddff;
+}
+
+#update_profile_form label {
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+#update_profile_buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.edit_screen_button {
+    text-align: center;
+    font-family: "Lexend", sans-serif;
+    border: 2px solid #5886a7;
+    background-color: #5886a7;
+    color: white;
+    border-radius: 8px;
+    height: 35px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    width: 80px;
+    
+}
+
+.edit_screen_button:hover {
+    border: 2px solid #385569;
+    background-color: #385569;
+}
+
+#cancel_update_button {
+    background-color: #ff2a2a;
+    border: 2px solid #ff2a2a;
+}
+
+#cancel_update_button:hover {
+    border: 2px solid #ab0000;
+    background-color: #ab0000;
+}
+
+/*  */
+#profile_info img {
+    height: 100px;
+}
+
+.like_comment_container {
+    display: flex;
+    gap: 20px;
+}
+
+.thread_profile p {
+    margin: 0;
+}
+.thread_profile {
+    border-bottom: 2px solid rgb(197, 197, 197);
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin-right: 20px;
+}
+
+#watchings_profile_list {
+    display: none;
+}
+
+.profile_options_button {
+    margin-top: 20px;
+    background-color: rgb(249, 249, 249);
+    font-family: 'Open Sans', sans-serif;
+    padding: 10px;
+    width: 100px;
+    border-radius: 30px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+.profile_options_button.active {
+    background-color: rgb(219, 219, 219);
+}
+
+.update_setting {
+    display: flex;
+    background-color: white;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: 'Open Sans', sans-serif;
+    justify-content: center;
+    margin: 10px;
+    margin-left: 0px;
+    border-radius: 30px;
+    font-size: 14px;
+    gap: 5px;
+
+}
+
+.update_profile_button {
+    cursor: pointer;
+}
+
+#update_profile_form input {
+    width: 95%;
+    font-family: 'Open Sans', sans-serif;
+    padding: 5px;
+}
+
+.update_profile_buttons {
+    margin-top: 5px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+#permissions_update_container {
+    display: none;
+}
+
+#change_permissions_button {
+    display: none;
+}
+
+#pfpUpload {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.update_profile_button {
+    font-family: 'Open Sans', sans-serif;
+    padding: 10px;
+    background-color: #5886a7;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    width: 100px;
+}
+
+.update_profile_button:hover {
+    background-color: #438bbf;
+}
+
+#permissionsSelect {
+    font-family: 'Open Sans', sans-serif;
+    padding: 10px;
+    background-color: #5886a7;
+    border: none;
+    color: white;
+    width: 150px;
+}

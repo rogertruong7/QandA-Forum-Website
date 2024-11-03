@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>QandA</title>
-    
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- You can add your styles and scripts here -->
     <link rel="icon" href="./assets/qanda_logo.svg" type="image/svg">
@@ -13,7 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Domine:wght@400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="styles/global.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="styles/mobile.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="styles/login.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="styles/register.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="styles/dashboard.css" />
@@ -21,16 +19,19 @@
     <link rel="stylesheet" type="text/css" media="screen" href="styles/thread_screen.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="styles/edit_screen.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="styles/comments.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/profile.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/mobile.css" />
 </head>
 <body>
-    <main role="main">
-        <!-- app goes here --> 
+    <main>
+        <!-- Error Popup -->
         <section id="error_popup" class="hidden">
             <h1 id="error_title">ERROR</h1>
             <p id="error_description">Description</p>
             <img src="./assets/Red_X.svg" alt="red_x">
             <button type="button" id="accept_error_button">OK</button>
         </section>
+        <!-- Login Screen -->
         <section id="login_screen" class="screen active">
             <div id="login_screen_left">
                 <div id="login_screen_text">
@@ -52,10 +53,11 @@
                 </div>
             </div>
             <div id="login_background_container">
-                <p id="brand_name_login">&copy; QandA 2025</p>
                 <img src="./assets/loginBackground.jpeg" alt="loginBackgroundImage">
             </div>
+            <p id="brand_name_login">&copy; QandA 2025</p>
         </section>
+        <!-- Register Screen -->
         <section id="register_screen" class="screen">
             <button type="button" id="back_to_login_button">Back to Login</button>
             <div id="register_container">
@@ -75,15 +77,17 @@
                 </form>
             </div>
         </section>
+        <!-- App Screen, with header and sidebar -->
         <section id="app_screen" class="screen">
             <aside class="sidebar" id="main_sidebar">
-                <h3>Your Threads</h3>
+                <h3>All Threads</h3>
                 <ul id="threads_sidebar">
                 </ul>
                 <div id="view_more_container">
                     <button type="button" id="view_more_button">View more</button>
                 </div>
             </aside>
+            <button id="toggle_sidebar" class="toggle-button">☰</button>
             <aside id="create_icon">
                 <p>Create</p>
                 <img id="create_img" src="./assets/edit.svg" alt="create_img">
@@ -92,9 +96,18 @@
                 <img src="./assets/qanda_logo.svg" alt="QandA Logo" class="logo">
                 <div id="header_container">
                     <h1 id="dashboard_text">QandA Dashboard</h1>
-                    <button type="button" id="logout_button">Logout</button>
+                    <img id="profile_button" src="./assets/profileButton.png" alt="profileButton">
+                    <div id="profile_popup">
+                        <div id="view_profile_button" class="profile_pop_up_button">
+                            <p>View Profile</p>
+                        </div>
+                        <div id="logout_button" class="profile_pop_up_button">
+                            <p>Log out</p>
+                        </div>
+                    </div>
                 </div>
             </nav>
+            <!-- Dashboard Screen -->
             <section id="dashboard_screen" class="appScreen active">
                 <p>Welcome to the Dashboard!</p>
                 <p>Select or create a thread to start.</p>
@@ -111,6 +124,7 @@
                     <button id="create_thread_submit" type="button">Submit</button>
                 </form>
             </section>
+            <!-- Thread Screen -->
             <section id="thread_screen" class="appScreen">
                 <div id="thread_container">
                     <div id="bin_edit_watch_container">
@@ -128,11 +142,10 @@
                                 <img id="bin_button" src="./assets/bin.svg" alt="bin">
                             </div>
                         </div>
-                        
                     </div>
                     <h2 id="thread_title">You are on a thread screen!</h2>
                     <div id="like_name_container">
-                        <p>Posted by Steve</p>
+                        <p class="name_on_thread">Posted by Steve</p>
                         <img id="like_button" src="./assets/white_heart.svg" alt="like_heart">
                     </div>
                     <div id="like_date_container">
@@ -153,20 +166,36 @@
                             <h3>Comments</h3>
                             <hr>
                         </div>
+                        <p id="lockedComment">You cannot comment on a locked thread.</p>
                         <div id="comments_list">
-                            <div class="comment">
+                            <div id="beFirst_container">
+                                <textarea id="comment_yourself" placeholder="Add a comment..."></textarea>
+                                <div id="add_comment_container">
+                                    <button class="comment_button" id="cancel_comment_button">Cancel</button>
+                                    <button class="comment_button" id="submit_comment_button">Comment</button>
+                                </div>
+                                <p id="beFirst">Be the first to comment!</p>
+                            </div>
+                            <div class="comment" id="comment0">
                                 <div class="comment_info">
-                                    <div>
-                                        <img class="comments_pfp" src="./assets/qanda_logo.svg" alt="profilepic">
+                                    <div class="left_comments_container">
+                                        <img class="comments_pfp" src="./assets/blankpfp.png" alt="profilepic">
+                                        <span class="reply_line"></span>
                                     </div>
-                                    <div id="middle_comments_container">
-                                        <p class="comments_name">Name</p>
-                                        <p class="comment_text">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                        </p>
+                                    <div class="middle_comments_container">
+                                        <p class="comments_name"></p>
+                                        <div class="comment_edit_container">
+                                            <textarea class="comment_edit_content"></textarea>
+                                            <div class="twoButtons">
+                                                <button class="comment_button submit_edited_comment_button">Comment</button>
+                                                <button class="cancel_commentedit_button">Cancel</button>
+                                            </div>
+                                        </div>
+                                        <p class="comment_text"></p>
                                         <div class="date_reply_container">
-                                            <p class="comment_date">Date</p>
+                                            <p class="comment_date"></p>
                                             <p class="reply_text">Reply</p>
+                                            <p class="comment_edit_text">Edit</p>
                                         </div>
                                     </div>
                                     <div class="comments_like_container">
@@ -175,17 +204,19 @@
                                     </div>
                                 </div>
                                 <div class="reply_content_container">
-                                    <textarea name="" class="reply_content">
-
-                                    </textarea>
+                                    <textarea class="reply_content" placeholder="Reply with a comment..."></textarea>
+                                    <div class="reply_submit_container">
+                                        <button class="reply_cont_button reply_cancel_button">Cancel</button>
+                                        <button class="reply_cont_button reply_submit_button">Comment</button>
+                                    </div>
                                 </div>
+                                <div class="indented_comment_list"></div>
                             </div>
-                            
-                            <!--  -->
                         </div>
                     </section>
                 </div>
             </section>
+            <!-- Edit Thread Screen -->
             <section id="edit_section" class="appScreen">
                 <div id="edit_form_container">
                     <form id="edit_form">
@@ -209,11 +240,94 @@
                     </div>
                 </div>
             </section>
+            <!-- Profile Screen -->
+            <section id="profile_section" class="appScreen">
+                <div id="profile_page">
+                    <div id="your_profile">
+                        <h1>Profile</h1>
+                        <div id="profile_info">
+                            <img src="./assets/blankpfp.png" alt="profile_pic">
+                            <p id="name_profile">Name</p>
+                            <p id="email_profile">Email</p>
+                            <i id="admin_profile">User</i>
+                        </div>
+                        <div>
+                            <button class="profile_options_button active" id="threads_posted_button">Posts</button>
+                            <button class="profile_options_button" id="threads_watching_button">Watching</button>
+                        </div>
+                         <div class="thread_list" id="threads_profile_list">
+                            <h2>Threads posted</h2>
+                        </div>
+                        <div class="thread_list" id="watchings_profile_list">
+                            <h2>Threads watching</h2>
+                        </div>
+                    </div>
+                    <div id="right_container_profile">
+                        <h2>Update Profile</h2>
+                        <div id="update_profile_form">
+                            <button id="change_pfp_button" class="update_setting">
+                                Change picture
+                            </button>
+                            <div id="pfp_update_container">
+                                <input type="file" id="pfpUpload" name="fileUpload">
+                                <div class="update_profile_buttons">
+                                    <button class="update_profile_button" id="cancel_update_button_pfp">Cancel</button>
+                                    <button class="update_profile_button" id="submit_update_button_pfp">Save</button>
+                                </div>
+                            </div>
+                            <button id="change_name_button" class="update_setting">
+                                Change name
+                            </button>
+                            <div id="name_update_container">
+                                <input type="text" id="change_name_input" name="change_name">
+                                <div class="update_profile_buttons">
+                                    <button class="update_profile_button" id="cancel_update_button_name">Cancel</button>
+                                    <button class="update_profile_button" id="submit_update_button_name">Save</button>
+                                </div>
+                            </div>
+                            <button id="change_email_button" class="update_setting">
+                                Change email
+                            </button>
+                            <div id="email_update_container">
+                                <input type="email" id="change_email_input" name="change_email" autocomplete="off">
+                                <div class="update_profile_buttons">
+                                    <button class="update_profile_button" id="cancel_update_button_email">Cancel</button>
+                                    <button class="update_profile_button" id="submit_update_button_email">Save</button>
+                                </div>
+                            </div>
+                            <button id="change_password_button" class="update_setting">
+                                Change password
+                            </button>
+                            <div id="password_update_container">
+                                <input type="password" id="change_password_input" name="change_password" autocomplete="off">
+                                <input type="password" id="confirm_password_input" name="confirm_updated_password" autocomplete="off" placeholder="Confirm Password">
+                                <div class="update_profile_buttons">
+                                    <button class="update_profile_button" id="cancel_update_button_password">Cancel</button>
+                                    <button class="update_profile_button" id="submit_update_button_password">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                        <button id="change_permissions_button" class="update_setting">
+                            Change permissions
+                        </button>
+                        <div id="permissions_update_container">
+                            <select id="permissionsSelect" name="permissions">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="admin">Admin</option>
+                                <option value="user">User</option>
+                            </select>
+                            <div class="update_profile_buttons">
+                                <button class="update_profile_button" id="submit_update_button_permissions">Update</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer>
+                    <p>&copy; QandA 2025</p>
+                </footer>
+            </section>
         </section>
     </main>
-    <footer class="active">
-        <p>&copy; QandA 2025</p>
-    </footer>
     <script type="module" src="src/main.js"></script>
 </body>
 </html>

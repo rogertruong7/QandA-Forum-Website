@@ -57,3 +57,48 @@ export const stringToBool = (str) => {
     
     return false;
 };
+
+export 
+const timeSinceComment = (datetime) => {
+    const commentDate = new Date(datetime);
+    const currentDate = new Date();
+    const diffMs = currentDate - commentDate;
+
+    if (diffMs < 60000) { // less than 1 minute
+        return 'Just now';
+    }
+
+    const diffMinutes = Math.floor(diffMs / 60000);
+    if (diffMinutes < 60) {
+        if (diffMinutes === 1) {
+            return '1 minute ago';
+        } else {
+            return `${diffMinutes} minutes ago`;
+        }
+    }
+
+    const diffHours = Math.floor(diffMinutes / 60);
+    if (diffHours < 24) {
+        if (diffHours === 1) {
+            return '1 hour ago';
+        } else {
+            return `${diffHours} hours ago`;
+        }
+    }
+
+    const diffDays = Math.floor(diffHours / 24);
+    if (diffDays < 7) { 
+        if (diffDays === 1) {
+            return '1 day ago';
+        } else {
+            return `${diffDays} days ago`;
+        }
+    }
+
+    const diffWeeks = Math.floor(diffDays / 7);
+    if (diffWeeks === 1) {
+        return '1 week ago';
+    } else {
+        return `${diffWeeks} weeks ago`;
+    }
+}

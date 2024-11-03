@@ -1,5 +1,230 @@
+@media (max-width: 1400px) {
+    #edit_section.active {
+        margin-left: 0;
+        
+    }
+
+    #edit_form_container {
+        width: 500px;
+        padding-left: 0;
+        margin-left: 300px;
+    }
+
+    #edit_form {
+        width: auto;
+    }
+
+}
+@media (max-width: 1200px) {
+    #thread_container {
+        margin-left: 0px;
+        margin-right: 0px;
+        width: 100%;
+    }
+
+    #profile_section.active {
+
+        margin-left: 300px; /* 250px form appscreen + 100px */
+        margin-right: 0px;
+    }
+}
+
+@media (max-width: 1000px) {
+    #your_profile {
+        width: 300px;
+        margin-right: 0px;
+    }
+    #profile_page {
+        width: 400px;
+        margin-right: 0px;
+    }
+
+    #right_container_profile {
+        width: 300px;
+        margin-right: 0px;
+    }
+    #update_profile_form {
+        width: 300px;
+    }
+    
+    
+    .thread_list {
+        width: 300px;
+    }
+}
 @media (max-width: 986px) {
     #login_screen_left {
         min-width: 500px;
+    }
+    #profile_page {
+        flex-direction: column;
+    }
+
+    
+}
+@media (max-width: 800px) {
+    #right_container_profile {
+        width: 300px;
+    }
+    #your_profile {
+        width: 300px;
+    }
+
+    #edit_form_container {
+        width: 300px;
+        padding-left: 0;
+        margin-left: 300px;
+    }
+
+    #edit_form {
+        width: auto;
+    }
+}
+
+@media (min-width: 636px) {
+    #main_sidebar {
+        left: 0px;
+    }
+}
+
+@media (max-width: 636px) {
+    .toggle-button {
+        left: 0px;
+    }
+    
+
+    #right_container_profile {
+        width: 400px;
+        margin-right: 0px;
+    }
+
+    .profile_pop_up_button {
+        right: 0;
+    }
+
+    .comment_info {
+        font-size: 10px;
+    }
+
+    #main_sidebar {
+        left: -250px;
+    }
+
+    .appScreen.active {
+        width: 100vw;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0;
+    }
+
+    #thread_container {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        left: 0;
+    }
+    #thread_screen.active {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    #edit_form_container {
+        width: 270px;
+        margin-left: 20px;
+    }
+
+    #edit_form {
+        width: auto;
+    }
+
+    #profile_section.active {
+        margin-left: 20px; 
+        margin-right: 0px;
+    }
+}
+
+@media (max-width: 600px) {
+    .comment_info {
+        font-size: 10px;
+    }
+    .date_reply_container {
+        flex-direction: column;
+    }
+    .comment_edit_container {
+        flex-direction: column;
+        font-size: 11px;
+    }
+    .comment_edit_container textarea {
+        font-size: 11px;
+    }
+    #dashboard_text {
+        font-size: 10px;
+    }
+}
+
+
+@media (max-width: 500px) {
+    #profile_page {
+        width: 400px;
+    }
+
+    .thread_list {
+        width: 300px;
+    }
+
+    #login_screen_left {
+        min-width: 500px;
+    }
+
+    #brand_name_login {
+        bottom: 0;
+        left: 20px;
+
+    }
+
+    #right_container_profile {
+        width: 200px;
+    }
+
+    #your_profile {
+        width: 200px;
+    }
+
+    .update_setting {
+        width: 100px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin: 0px;
+        margin-left: 0px;
+        border-radius: 30px;
+        font-size: 10px;
+        gap: 5px;
+    }
+    #update_profile_form input {
+        width: 150px;
+    }
+
+    .update_profile_buttons {
+        font-size: 10px;
+        width: 50px;
+        display: flex;
+        transform: translate(100%);
+        justify-content: flex-end;
+    }
+}   
+
+@media (max-width: 400px) {
+    #profile_page {
+        width: 300px;
+    }
+}
+@media (max-width: 320px) {
+    #login_screen_left {
+        min-width: 320px;
+    }
+
+    #brand_name_login {
+        bottom: 0;
+        left: 20px;
+
     }
 }
